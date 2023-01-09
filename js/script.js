@@ -6,12 +6,14 @@ const {
 createApp({
     data() {
         return {
-            number: ''
+            mail: []
         }
     },
     mounted() {
-        axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((result) => {
-            
-        })
-    },
+        for(let i=0; i<10; i++){
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((result) => {
+                this.mail.push(result.data.response);
+            })
+        }
+    }
 }).mount('#app')
