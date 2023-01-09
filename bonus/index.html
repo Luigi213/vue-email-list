@@ -13,7 +13,7 @@
         <div id="app">
             <div class="container">
                 <ul>
-                    <li v-for="email in mail">
+                    <li v-for="(email, index) in mail" v-if="mail.length == 10">
                         {{ email }}
                     </li>                
                 </ul>
